@@ -3,6 +3,8 @@ package com.example.vk_bot.controller;
 import com.example.vk_bot.dto.Callback;
 import com.example.vk_bot.service.CallbackAPIService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,10 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class EchoController {
 
+  private static final Logger log = LoggerFactory.getLogger(EchoController.class);
+
   private final CallbackAPIService callbackAPIService;
 
   @PostMapping("/")
   public ResponseEntity<String> resp(@RequestBody Callback callback) {
+    log.info("A new message has been sent to the bot.");
     return ResponseEntity.ok(callbackAPIService.handleCallback(callback));
   }
 }
