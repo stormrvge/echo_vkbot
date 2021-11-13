@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class MessageServiceImpl implements MessageService {
 
-  private final RestTemplate restTemplate = new RestTemplate();
+  private final RestTemplate restTemplate;
   private final ResponseURICreator responseURICreator;
   private final MessageSendResponse messageSendResponse;
 
