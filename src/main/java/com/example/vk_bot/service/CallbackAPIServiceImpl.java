@@ -10,6 +10,8 @@ import com.example.vk_bot.util.exceptions.InvalidSecretException;
 import com.example.vk_bot.util.exceptions.UnsupportedTypeOfCallback;
 import com.example.vk_bot.util.parser.VkApiProperties;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,6 +20,8 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class CallbackAPIServiceImpl implements CallbackAPIService {
+
+  private static final Logger log = LoggerFactory.getLogger(CallbackAPIServiceImpl.class);
 
   private final MessageService messageService;
   private final MessageInRepository messageInRepository;
@@ -32,12 +36,14 @@ public class CallbackAPIServiceImpl implements CallbackAPIService {
       case CONFIRMATION:
         return vkApiProperties.getConfirmation();
       default:
+        log.info("An unsupported request type came in.");
         throw new UnsupportedTypeOfCallback("Service doesn't support this type of callback!");
     }
   }
 
   private void validateCallbackSecret(String callbackSecret) {
     if (!vkApiProperties.getSecret().equals(callbackSecret)) {
+      log.info("A request came with an invalid secret key: {}", callbackSecret);
       throw new InvalidSecretException("Callback secret is invalid.");
     }
   }
