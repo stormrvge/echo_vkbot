@@ -1,4 +1,4 @@
-package com.example.vk_bot.util.exceptions;
+package stormrage.vk_bot.util.exceptions;
 
 public class InvalidSecretException extends RuntimeException {
 

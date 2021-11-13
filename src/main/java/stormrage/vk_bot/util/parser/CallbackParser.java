@@ -1,12 +1,12 @@
-package com.example.vk_bot.util.parser;
+package stormrage.vk_bot.util.parser;
 
-import com.example.vk_bot.dto.Callback;
-import com.example.vk_bot.entity.MessageIn;
+import stormrage.vk_bot.dto.Callback;
+import stormrage.vk_bot.entity.MessageIn;
 import java.util.Map;
 
 /**
- * This class is needed for parsing from {@link com.example.vk_bot.dto.Callback} to {@link
- * com.example.vk_bot.entity.MessageIn}.
+ * This class is needed for parsing from {@link Callback} to {@link
+ * MessageIn}.
  */
 public class CallbackParser {
 

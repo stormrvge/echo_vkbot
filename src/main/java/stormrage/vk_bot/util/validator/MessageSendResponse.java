@@ -1,7 +1,7 @@
-package com.example.vk_bot.util.validator;
+package stormrage.vk_bot.util.validator;
 
-import com.example.vk_bot.dto.MessageAnswer;
-import com.example.vk_bot.util.exceptions.InvalidRequestException;
+import stormrage.vk_bot.dto.MessageAnswer;
+import stormrage.vk_bot.util.exceptions.InvalidRequestException;
 import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

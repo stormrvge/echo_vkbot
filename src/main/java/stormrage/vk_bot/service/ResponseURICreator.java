@@ -1,12 +1,12 @@
-package com.example.vk_bot.service;
+package stormrage.vk_bot.service;
 
-import static com.example.vk_bot.util.parser.AttachmentParser.parseStickerId;
-import static com.example.vk_bot.util.parser.AttachmentParser.parseAttachments;
-import static com.example.vk_bot.util.parser.AttachmentParser.parseReplyMessageId;
-import static com.example.vk_bot.util.parser.AttachmentParser.isSticker;
+import static stormrage.vk_bot.util.parser.AttachmentParser.parseStickerId;
+import static stormrage.vk_bot.util.parser.AttachmentParser.parseAttachments;
+import static stormrage.vk_bot.util.parser.AttachmentParser.parseReplyMessageId;
+import static stormrage.vk_bot.util.parser.AttachmentParser.isSticker;
 
-import com.example.vk_bot.dto.MessageOut;
-import com.example.vk_bot.util.parser.VkApiProperties;
+import stormrage.vk_bot.dto.MessageOut;
+import stormrage.vk_bot.util.parser.VkApiProperties;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.net.URI;

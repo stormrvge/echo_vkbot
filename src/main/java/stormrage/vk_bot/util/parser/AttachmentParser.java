@@ -1,4 +1,4 @@
-package com.example.vk_bot.util.parser;
+package stormrage.vk_bot.util.parser;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.vk_bot.util.parser;
+package stormrage.vk_bot.util.parser;
 
 import javax.validation.constraints.NotEmpty;
 import lombok.Data;

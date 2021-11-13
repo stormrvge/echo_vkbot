@@ -1,8 +1,8 @@
-package com.example.vk_bot.service;
+package stormrage.vk_bot.service;
 
-import com.example.vk_bot.dto.MessageOut;
-import com.example.vk_bot.dto.MessageAnswer;
-import com.example.vk_bot.util.validator.MessageSendResponse;
+import stormrage.vk_bot.dto.MessageOut;
+import stormrage.vk_bot.dto.MessageAnswer;
+import stormrage.vk_bot.util.validator.MessageSendResponse;
 import java.net.URI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

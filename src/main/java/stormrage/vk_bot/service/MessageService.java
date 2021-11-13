@@ -1,6 +1,6 @@
-package com.example.vk_bot.service;
+package stormrage.vk_bot.service;
 
-import com.example.vk_bot.dto.MessageOut;
+import stormrage.vk_bot.dto.MessageOut;
 
 /**
  * This interface is responsible for sending {@link MessageOut} to VK API.

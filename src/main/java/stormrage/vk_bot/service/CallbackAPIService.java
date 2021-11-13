@@ -1,10 +1,11 @@
-package com.example.vk_bot.service;
+package stormrage.vk_bot.service;
 
-import com.example.vk_bot.dto.Callback;
+import stormrage.vk_bot.dto.Callback;
+import stormrage.vk_bot.controller.EchoController;
 
 /**
  * This interface is responsible for handle {@link Callback} and return answer to {@link
- * com.example.vk_bot.controller.EchoController}.
+ * EchoController}.
  */
 public interface CallbackAPIService {
 

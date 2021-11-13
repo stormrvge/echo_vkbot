@@ -1,4 +1,4 @@
-package com.example.vk_bot.entity;
+package stormrage.vk_bot.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -9,10 +9,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import stormrage.vk_bot.dto.Callback;
 
 /**
  * This class is entity that will be saved in database. After response, we will parse from {@link
- * com.example.vk_bot.dto.Callback} to {@link MessageIn} and save to database.
+ * Callback} to {@link MessageIn} and save to database.
  */
 @Entity
 @Builder

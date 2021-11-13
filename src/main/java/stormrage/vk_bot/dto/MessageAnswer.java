@@ -1,4 +1,4 @@
-package com.example.vk_bot.dto;
+package stormrage.vk_bot.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

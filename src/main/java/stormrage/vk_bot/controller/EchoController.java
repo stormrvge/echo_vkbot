@@ -1,7 +1,7 @@
-package com.example.vk_bot.controller;
+package stormrage.vk_bot.controller;
 
-import com.example.vk_bot.dto.Callback;
-import com.example.vk_bot.service.CallbackAPIService;
+import stormrage.vk_bot.dto.Callback;
+import stormrage.vk_bot.service.CallbackAPIService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

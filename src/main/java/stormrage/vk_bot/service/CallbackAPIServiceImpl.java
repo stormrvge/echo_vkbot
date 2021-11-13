@@ -1,18 +1,17 @@
-package com.example.vk_bot.service;
+package stormrage.vk_bot.service;
 
-import static com.example.vk_bot.util.parser.CallbackParser.fromCallbackToMessageIn;
-
-import com.example.vk_bot.dto.Callback;
-import com.example.vk_bot.dto.MessageOut;
-import com.example.vk_bot.entity.MessageIn;
-import com.example.vk_bot.repository.MessageInRepository;
-import com.example.vk_bot.util.exceptions.InvalidSecretException;
-import com.example.vk_bot.util.exceptions.UnsupportedTypeOfCallback;
-import com.example.vk_bot.util.parser.VkApiProperties;
+import stormrage.vk_bot.dto.Callback;
+import stormrage.vk_bot.dto.MessageOut;
+import stormrage.vk_bot.entity.MessageIn;
+import stormrage.vk_bot.repository.MessageInRepository;
+import stormrage.vk_bot.util.exceptions.InvalidSecretException;
+import stormrage.vk_bot.util.exceptions.UnsupportedTypeOfCallback;
+import stormrage.vk_bot.util.parser.VkApiProperties;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import stormrage.vk_bot.util.parser.CallbackParser;
 
 /**
  * Implementation of {@link CallbackAPIService}.
@@ -31,7 +30,7 @@ public class CallbackAPIServiceImpl implements CallbackAPIService {
     validateCallbackSecret(callback.getSecret());
     switch (callback.getType()) {
       case MESSAGE_NEW:
-        handleIncomingMessage(fromCallbackToMessageIn(callback));
+        handleIncomingMessage(CallbackParser.fromCallbackToMessageIn(callback));
         return "ok";
       case CONFIRMATION:
         return vkApiProperties.getConfirmation();

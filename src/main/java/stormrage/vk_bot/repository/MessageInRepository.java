@@ -1,6 +1,6 @@
-package com.example.vk_bot.repository;
+package stormrage.vk_bot.repository;
 
-import com.example.vk_bot.entity.MessageIn;
+import stormrage.vk_bot.entity.MessageIn;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
