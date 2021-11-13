@@ -21,10 +21,6 @@ public class MessageServiceImpl implements MessageService {
   private final MessageSendResponse messageSendResponse;
 
   public void sendMessage(MessageOut messageOut) {
-    sendToServer(messageOut);
-  }
-
-  private void sendToServer(MessageOut messageOut) {
     messageOut.setRandomId((long) messageOut.hashCode());
     URI uri = responseURICreator.createUri(messageOut);
     ResponseEntity<MessageAnswer> resp = restTemplate.postForEntity(uri, null, MessageAnswer.class);
