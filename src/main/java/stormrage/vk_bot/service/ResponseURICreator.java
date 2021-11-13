@@ -51,6 +51,8 @@ public class ResponseURICreator {
 
   private URI createSendStickerURI(MessageOut messageOut) {
     String stickerId = parseStickerId(messageOut.getAttachment());
+    messageOut.setMessage(null);
+    messageOut.setAttachment(null);
     return UriComponentsBuilder.fromHttpUrl("https://api.vk.com/method/messages.send")
         .queryParams(convertMessageOutIntoMap(messageOut))
         .queryParam("sticker_id", stickerId)
