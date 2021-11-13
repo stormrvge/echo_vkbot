@@ -26,8 +26,6 @@ public class MessageOut {
   private String attachment;
   @JsonProperty(value = "reply_to")
   private Long replyTo;
-  @JsonProperty(value = "forward_messages")
-  private String forwardMessages;
   @JsonProperty(value = "sticker_id")
   private Long stickerId;
   @JsonProperty(value = "group_id")
