@@ -7,11 +7,11 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
- * This class contains properties from vk_bot.properties file.
+ * This class contains properties from vk_api.properties file.
  */
 @Component
 @Data
-@PropertySource(value = "classpath:vk_bot.properties")
+@PropertySource(value = "classpath:vk_api.properties")
 @ConfigurationProperties(prefix = "vk.api")
 public class VkApiProperties {
 
