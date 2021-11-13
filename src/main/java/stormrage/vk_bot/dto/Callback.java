@@ -17,7 +17,7 @@ public class Callback {
   private CallbackType type;
   private Map<String, Object> messageMap;
   @JsonProperty(value = "group_id")
-  private long groupId;
+  private Long groupId;
   private String secret;
   @JsonProperty(value = "event_id")
   private String eventId;
@@ -29,6 +29,11 @@ public class Callback {
   private void unpackMessageFromObject(Map<String, Object> objectMap) {
     messageMap = (Map<String, Object>) Objects.requireNonNull(
         objectMap.get("message"));
+  }
+
+  public boolean isEmpty() {
+    return type == null && messageMap == null && groupId == null && secret == null
+        && eventId == null && replyMessage == null;
   }
 
   public enum CallbackType {
