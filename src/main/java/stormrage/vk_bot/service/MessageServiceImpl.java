@@ -1,5 +1,7 @@
 package stormrage.vk_bot.service;
 
+import static java.lang.Math.random;
+
 import stormrage.vk_bot.dto.MessageOut;
 import stormrage.vk_bot.dto.MessageAnswer;
 import stormrage.vk_bot.util.validator.MessageSendResponse;
@@ -21,7 +23,7 @@ public class MessageServiceImpl implements MessageService {
   private final MessageSendResponse messageSendResponse;
 
   public void sendMessage(MessageOut messageOut) {
-    messageOut.setRandomId((long) messageOut.hashCode());
+    messageOut.setRandomId((long) (messageOut.hashCode() + random() * 10000L));
     URI uri = responseURICreator.createUri(messageOut);
     ResponseEntity<MessageAnswer> resp = restTemplate.postForEntity(uri, null, MessageAnswer.class);
     messageSendResponse.validate(resp);
