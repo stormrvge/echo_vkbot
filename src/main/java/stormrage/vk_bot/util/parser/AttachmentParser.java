@@ -40,16 +40,18 @@ public class AttachmentParser {
     ArrayList<Map<String, String>> attachmentsMap = parseInit(attachments);
     StringBuilder sb = new StringBuilder();
 
-    for (Map<String, String> stringStringMap : attachmentsMap) {
-      if (stringStringMap.get(TYPE).equals(PHOTO) || stringStringMap.get(TYPE).equals(VIDEO)
-          || stringStringMap.get(TYPE).equals(AUDIO) || stringStringMap.get(TYPE).equals(DOC)
-          || stringStringMap.get(TYPE).equals(STICKER)) {
-        sb.append(stringStringMap.get(TYPE)).append(stringStringMap.get(OWNER_ID)).append("_")
-            .append(stringStringMap.get(ID));
-        if (stringStringMap.get(ACCESS_KEY) != null) {
-          sb.append("_").append(stringStringMap.get(ACCESS_KEY));
+    for (int i = 0; i < attachmentsMap.size(); i++) {
+      if (attachmentsMap.get(i).get(TYPE).equals(PHOTO) || attachmentsMap.get(i).get(TYPE)
+          .equals(VIDEO) || attachmentsMap.get(i).get(TYPE).equals(AUDIO) || attachmentsMap.get(i)
+          .get(TYPE).equals(DOC) || attachmentsMap.get(i).get(TYPE).equals(STICKER)) {
+        sb.append(attachmentsMap.get(i).get(TYPE)).append(attachmentsMap.get(i).get(OWNER_ID))
+            .append("_").append(attachmentsMap.get(i).get(ID));
+        if (attachmentsMap.get(i).get(ACCESS_KEY) != null) {
+          sb.append("_").append(attachmentsMap.get(i).get(ACCESS_KEY));
         }
-        sb.append(",");
+        if (i != attachmentsMap.size() - 1) {
+          sb.append(",");
+        }
       }
     }
     return sb.toString();
