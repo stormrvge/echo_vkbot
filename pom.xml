@@ -16,6 +16,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Echo VK Bot</name>
   <description>Echo VK bot which will simply repeat your messages</description>
+
+  <packaging>jar</packaging>
   <properties>
     <java.version>1.8</java.version>
   </properties>
@@ -75,21 +77,9 @@
   </dependencies>
 
   <build>
+    <finalName>echo_vkBot</finalName>
     <plugins>
       <plugin>
-        <executions>
-          <execution>
-            <goals>
-              <goal>repackage</goal>
-            </goals>
-            <configuration>
-              <classifier>spring-boot</classifier>
-              <mainClass>
-                stormrage.vk_bot.VkBotApplication
-              </mainClass>
-            </configuration>
-          </execution>
-        </executions>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
